@@ -1,5 +1,5 @@
 - name: Create vars file
-  hosts: localhost
+  hosts: controller
   tasks:
     - name: Creating a vars file
       command: touch "{{ pg_name }}".yaml

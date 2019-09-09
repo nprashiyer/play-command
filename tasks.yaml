@@ -1,0 +1,8 @@
+- name: Create vars file
+  hosts: controller
+  gather_facts: False
+  tasks:
+    - name: Inserting variables into vars.yaml
+      file:
+        path: $HOME/{{ pg_name.yaml }}
+        state: touch

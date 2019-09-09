@@ -1,0 +1,16 @@
+- name: Create empty file
+  hosts: controller
+  gather_facts: False
+  tasks:
+  
+   - name: Outout PWD
+     command: pwd
+     register: output
+     
+   - dubug:
+      msg: output
+      
+   - name: Creating your file
+     file:
+       dest: $HOME/somename.yaml
+       state: touch

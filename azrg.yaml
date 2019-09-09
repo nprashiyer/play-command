@@ -1,0 +1,17 @@
+- name: Create Azure Resource Group
+  hosts: controller
+  gather_facts: False
+  tasks:
+    - name: Create a resource group
+      azure_rm_resourcegroup:
+        name: "{{ rg_name }}"
+        location: "{{ location }}"
+        subscription_id: "{{ lookup('env', 'AZURE_SUBSCRIPTION_ID') }}"
+        tenant : "{{ lookup('env', 'AZURE_TENANT') }}"
+        client_id : "{{ lookup('env', 'AZURE_CLIENT_ID') }}"
+        secret : "{{ lookup('env', 'AZURE_SECRET') }}"
+      register: output
+
+    - name: Checking  output
+      debug:
+        msg: output

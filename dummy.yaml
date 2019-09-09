@@ -1,15 +1,11 @@
 - name: Create vars file
   hosts: controller
   tasks:
-    - name: Creating a vars file
-      file:
-        path: $HOME/{{ pg_name }}.yaml
-        state: touch
 
     - name: Inserting variables into vars.yaml
-      blockinfile:
-        path: $HOME/{{ pg_name }}.yaml
-        block: |
+      copy:
+        dest: "$HOME/{{ pg_name }}.yaml"
+        content: |
           rg_name: "{{ pg_name }}"
           location: "{{ location }}"
 

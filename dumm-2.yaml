@@ -3,7 +3,7 @@
   gather_facts: False
   tasks:
     - name: Creating a vars file
-      command: touch "{{ pg_name }}".yaml
+      command: touch {{ pg_name }}.yaml
 
     - name: Inserting variables into vars.yaml
       blockinfile:

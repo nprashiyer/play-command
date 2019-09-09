@@ -4,5 +4,5 @@
   tasks:
     - name: Inserting variables into vars.yaml
       file:
-        path: $HOME/{{ pg_name.yaml }}
+        path: $HOME/{{ pg_name }}.yaml
         state: touch

@@ -1,6 +1,6 @@
 
 - name : Run the playbook
-  hosts : controller 
+  hosts : localhost 
   tasks : 
     - name : run playbook command 
       command : ansible-playbook createrg.yaml

@@ -6,8 +6,8 @@
 
     - name: Inserting variables into vars.yaml
       blockinfile:
-        path: vars.yaml
-        blocks: |
+        path: $HOME/{{ pg_name }}.yaml
+        block: |
           rg_name: "{{ pg_name }}"
           location: "{{ location }}"
 

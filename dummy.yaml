@@ -3,7 +3,7 @@
   tasks:
     - name: Creating a vars file
       file:
-        path: "$HOME/{{ pg_name }}.yaml"
+        path: $HOME/{{ pg_name }}.yaml
         state: touch
 
     - name: Inserting variables into vars.yaml

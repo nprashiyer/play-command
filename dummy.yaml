@@ -2,7 +2,9 @@
   hosts: controller
   tasks:
     - name: Creating a vars file
-      command: touch "{{ pg_name }}".yaml
+      file:
+        path: "$HOME/{{ pg_name }}.yaml"
+        state: touch
 
     - name: Inserting variables into vars.yaml
       blockinfile:

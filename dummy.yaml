@@ -1,0 +1,15 @@
+- name: Create vars file
+  hosts: localhost
+  tasks:
+    - name: Creating a vars file
+      command: touch "{{ pg_name }}".yaml
+
+    - name: Inserting variables into vars.yaml
+      blockinfile:
+        path: vars.yaml
+        blocks: |
+          rg_name: "{{ pg_name }}"
+          location: "{{ location }}"
+
+    - name: Create RG
+      command: ansible-playbook createrg.yaml -e @"{{ pg_name }}".yaml

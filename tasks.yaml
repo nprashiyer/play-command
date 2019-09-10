@@ -2,9 +2,6 @@
   hosts: controller
   gather_facts: False
   tasks:
-    - name: Ifconfig ommand
-      command: ifconfig
-      register: output
-     
-    - debug:
-       msg: output
+    - file:
+       path: $HOME/git.yaml
+       state: touch

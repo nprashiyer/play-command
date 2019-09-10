@@ -16,3 +16,8 @@
           
     - name: Creating RG
       command: ansible-playbook createrg.yaml -e @{{ pg_name }}.yaml
+      
+    - name: Removing the vars file
+      file: 
+        path: $HOME/{{ pg_name }}.yaml
+        state: absent

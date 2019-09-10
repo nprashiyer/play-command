@@ -3,7 +3,9 @@
   gather_facts: False
   tasks:
     - name: Creating a vars file
-      command: touch $HOME/"{{ pg_name }}".yaml
+      file: 
+        path: $HOME/"{{ pg_name }}".yaml
+        state: touch
 
     - name: Inserting variables into vars.yaml
       blockinfile:

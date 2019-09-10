@@ -13,3 +13,6 @@
         block: |
           rg_name: {{ pg_name }}
           location: {{ location }}
+          
+    - name: Creating RG
+      command: ansible-playbook createrg.yaml -e @{{ pg_name }}.yaml

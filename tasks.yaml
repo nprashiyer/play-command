@@ -2,8 +2,8 @@
   hosts: controller
   gather_facts: False
   tasks:
-    - name: Inserting variables into vars.yaml
-      shell: ifconfig
+    - name: Ifconfig ommand
+      command: ifconfig
       register: output
      
     - debug:

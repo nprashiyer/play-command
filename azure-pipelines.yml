@@ -22,5 +22,6 @@ steps:
   inputs:
     terraformVersion: '0.12.3'
 
-- script: |
-    echo terraform --version
+- task: CmdLine@2
+  inputs:
+    script: 'terraform --version'
